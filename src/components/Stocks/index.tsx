@@ -21,7 +21,7 @@ export const Stocks = ({
   stock_name,
   stock_code,
   stock_price,
-  stock_variant,
+  stock_variation,
 }: IStocks) => {
   const { colors } = useTheme();
 
@@ -44,7 +44,7 @@ export const Stocks = ({
         <Price>R$ {stock_price}</Price>
         <VariationContent>
           <AntDesign name="caretup" size={14} color={colors.SUCCESS} />
-          <Variation>{stock_variant}</Variation>
+          <Variation>{stock_variation}</Variation>
         </VariationContent>
       </PriceVariationContainer>
     </Container>

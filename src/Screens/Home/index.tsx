@@ -22,7 +22,7 @@ export const Home = () => {
         stock_name="BRADESCO PN"
         stock_code="BBDC4"
         stock_price={16.14}
-        stock_variant={2.42}
+        stock_variation={2.42}
       />
     </Container>
   );

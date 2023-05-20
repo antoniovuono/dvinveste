@@ -3,5 +3,5 @@ export interface IStocks {
     stock_name: string;
     stock_code: string;
     stock_price: number;
-    stock_variant: number;
+    stock_variation: number;
 }
