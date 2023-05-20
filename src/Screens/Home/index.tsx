@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Container, ListHeader, SubTitle, Title } from "./styles";
+import { Divider } from "../../components/Divider";
 
 export const Home = () => {
   return (
@@ -12,6 +13,8 @@ export const Home = () => {
 
         <SubTitle>Cotações do dia na bolsa de valores.</SubTitle>
       </ListHeader>
+
+      <Divider />
     </Container>
   );
 };

@@ -5,12 +5,12 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
    flex: 1;
    background-color: ${({theme}) => theme.colors.PRIMARY_BACKGROUND};
+   padding: 0 20px;
 `;
 
 export const ListHeader = styled.View`
    width: 100%;
    margin-top: ${getStatusBarHeight() + 20}px;
-   padding: 0 20px;
 `;
 
 export const Title = styled.Text<{isYellow?: boolean}>`

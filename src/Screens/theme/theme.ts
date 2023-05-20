@@ -5,7 +5,8 @@ export default {
         PRIMARY_TITLE: '#FFFFFF',
         SECONDARY_TITLE: '#F4D35E',
         SUCCESS: '#37FF8B',
-        WARNING: "#FF5A5F"
+        WARNING: "#FF5A5F",
+        BORDERS: '#292929'
     }, 
     fonts: {
         PRIMARY_REGULAR: 'Poppins_400Regular',
