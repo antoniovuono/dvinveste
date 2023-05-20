@@ -14,8 +14,15 @@ import {
 } from "./styles";
 import { View } from "react-native";
 import { useTheme } from "styled-components";
+import { IStocks } from "./interfaces";
 
-export const Stocks = () => {
+export const Stocks = ({
+  stock_image,
+  stock_name,
+  stock_code,
+  stock_price,
+  stock_variant,
+}: IStocks) => {
   const { colors } = useTheme();
 
   return (
@@ -23,21 +30,21 @@ export const Stocks = () => {
       <ImageAndDescriptionContent>
         <StockImage
           source={{
-            uri: "https://play-lh.googleusercontent.com/ReQEaxm44OuduIlJEVO_-xs9iZXSyRNdzGKrONYoLSgAdOzyhPKTb1xuuoPXK6tABm0",
+            uri: stock_image,
           }}
         />
 
         <StockTitleContent>
-          <StockTitle>BRADESCO PN</StockTitle>
-          <StockTitle isMedium>BBDC4</StockTitle>
+          <StockTitle>{stock_name}</StockTitle>
+          <StockTitle isMedium>{stock_code}</StockTitle>
         </StockTitleContent>
       </ImageAndDescriptionContent>
 
       <PriceVariationContainer>
-        <Price>R$ 16,00</Price>
+        <Price>R$ {stock_price}</Price>
         <VariationContent>
           <AntDesign name="caretup" size={14} color={colors.SUCCESS} />
-          <Variation> 2,42</Variation>
+          <Variation>{stock_variant}</Variation>
         </VariationContent>
       </PriceVariationContainer>
     </Container>

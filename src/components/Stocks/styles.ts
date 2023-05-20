@@ -59,6 +59,7 @@ export const VariationContent = styled.View`
 
 export const Variation = styled.Text`
   font-size: 16px;
+  padding-left: 5px;
     ${({theme}) => css`
         color: ${theme.colors.SUCCESS};
         font-family: ${theme.fonts.PRIMARY_BOLD};

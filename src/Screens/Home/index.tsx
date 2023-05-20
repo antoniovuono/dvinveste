@@ -17,7 +17,13 @@ export const Home = () => {
 
       <Divider />
 
-      <Stocks />
+      <Stocks
+        stock_image="https://play-lh.googleusercontent.com/ReQEaxm44OuduIlJEVO_-xs9iZXSyRNdzGKrONYoLSgAdOzyhPKTb1xuuoPXK6tABm0"
+        stock_name="BRADESCO PN"
+        stock_code="BBDC4"
+        stock_price={16.14}
+        stock_variant={2.42}
+      />
     </Container>
   );
 };
