@@ -2,6 +2,7 @@ import React from "react";
 
 import { Container, ListHeader, SubTitle, Title } from "./styles";
 import { Divider } from "../../components/Divider";
+import { Stocks } from "../../components/Stocks";
 
 export const Home = () => {
   return (
@@ -15,6 +16,8 @@ export const Home = () => {
       </ListHeader>
 
       <Divider />
+
+      <Stocks />
     </Container>
   );
 };

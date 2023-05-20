@@ -1,0 +1,65 @@
+import { css } from 'styled-components';
+import styled from 'styled-components/native';
+
+
+export const Container = styled.View`
+   width: 100%;
+   border: 1px solid ${({theme}) => theme.colors.BORDERS};
+   border-radius: 8px;
+   flex-direction: row;
+   justify-content: space-between;
+   padding: 18px 13px;
+   align-items: center;
+   margin-bottom: 10px;
+`;
+
+export const ImageAndDescriptionContent = styled.View`
+    flex-direction: row;
+
+`;
+
+export const StockImage = styled.Image`
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    border: 1px solid white;
+`;
+
+export const StockTitleContent= styled.View`
+    padding-left: 19px;
+`;
+
+export const StockTitle = styled.Text<{isMedium?: boolean}>`
+    font-size: 16px;
+    ${({theme, isMedium}) => css`
+        color: ${theme.colors.PRIMARY_TITLE};
+        font-family: ${isMedium ? theme.fonts.PRIMARY_MEDIUM : theme.fonts.PRIMARY_BOLD};
+    `}
+`;
+
+export const PriceVariationContainer = styled.View`
+    justify-content: center;
+    align-items: center;
+`;
+
+export const Price = styled.Text`
+    font-size: 18px;
+    ${({theme}) => css`
+        color: ${theme.colors.PRIMARY_TITLE};
+        font-family: ${theme.fonts.PRIMARY_MEDIUM};
+    `}
+`;
+
+export const VariationContent = styled.View`
+    flex-direction: row;
+    align-items: center;
+
+`;
+
+export const Variation = styled.Text`
+  font-size: 16px;
+    ${({theme}) => css`
+        color: ${theme.colors.SUCCESS};
+        font-family: ${theme.fonts.PRIMARY_BOLD};
+    `}
+`;
