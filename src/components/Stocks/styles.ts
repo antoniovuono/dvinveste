@@ -22,7 +22,8 @@ export const StockImage = styled.Image`
     width: 48px;
     height: 48px;
     border-radius: 24px;
-    border: 1px solid white;
+    border-width: 1px;
+    border-color: ${({theme}) => theme.colors.PRIMARY_TITLE};
 `;
 
 export const StockTitleContent= styled.View`

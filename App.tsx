@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { Home } from "./src/Screens/Home";
+import { Home } from "./src/screens/Home";
 
 import {
   useFonts,
@@ -13,7 +13,7 @@ import * as SplashScreen from "expo-splash-screen";
 import { StatusBar, View } from "react-native";
 
 import { ThemeProvider } from "styled-components";
-import theme from "./src/Screens/theme/theme";
+import theme from "./src/screens/theme/theme";
 
 const App = () => {
   const [isFontsLoaded] = useFonts({
