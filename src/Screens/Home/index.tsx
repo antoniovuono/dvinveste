@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { FlatList, RefreshControl } from "react-native";
 
 import {
   Container,
@@ -10,15 +11,19 @@ import {
 } from "./styles";
 import { Divider } from "../../components/Divider";
 import { Stocks } from "../../components/Stocks";
-import { getRequest } from "../../services/networkRequests";
 import { useStocksStore } from "../../stores/useStocks";
-import { IStocksRequest } from "../../services/interface";
-import { FlatList } from "react-native";
 
 export const Home = () => {
+  const [isRefreshing, setIsRefreshing] = useState(false);
+
   const stocks = useStocksStore((state) => state.stocks);
   const fetchStocks = useStocksStore((state) => state.fetchStocks);
   const loading = useStocksStore((state) => state.isLoading);
+
+  const updateStocksGroup = () => {
+    fetchStocks();
+    setIsRefreshing(false);
+  };
 
   useEffect(() => {
     fetchStocks();
@@ -52,6 +57,14 @@ export const Home = () => {
                 stock_variation={item.change.toFixed(2)}
               />
             )}
+            refreshControl={
+              <RefreshControl
+                refreshing={isRefreshing}
+                onRefresh={updateStocksGroup}
+                tintColor={"white"}
+                colors={["white"]}
+              />
+            }
           />
         )}
       </StockGroupContent>

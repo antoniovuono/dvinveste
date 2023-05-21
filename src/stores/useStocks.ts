@@ -1,29 +1,26 @@
 import { create } from "zustand";
+
 import { IStocksRequest } from "../services/interface";
 import { getRequest } from "../services/networkRequests";
 
 export interface IState {
-    stocks: IStocksRequest[],
-    fetchStocks: () => void;
-    isLoading: boolean;
-};
+  stocks: IStocksRequest[];
+  fetchStocks: () => void;
+  isLoading: boolean;
+}
 
-const useStocksStore = create<IState>(set => ({
-    stocks: [],
+const useStocksStore = create<IState>((set) => ({
+  stocks: [],
 
-    isLoading: true,
+  isLoading: true,
 
-    fetchStocks: async () => {
+  fetchStocks: async () => {
+    const stocksResponse = await getRequest("/api/quote/list");
 
-        const stocksResponse = await getRequest("/api/quote/list");
+    set({ stocks: await stocksResponse?.data?.stocks });
 
-        set({ stocks: await stocksResponse?.data?.stocks});
-
-        set({ isLoading: false});
-    },
-
-   
+    set({ isLoading: false });
+  },
 }));
 
-export { useStocksStore
-};
+export { useStocksStore };
