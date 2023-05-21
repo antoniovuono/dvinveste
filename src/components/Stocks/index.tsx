@@ -1,20 +1,19 @@
-import React from "react";
 import { AntDesign } from "@expo/vector-icons";
+import React from "react";
+import { SvgUri } from "react-native-svg";
+import { useTheme } from "styled-components";
 
+import { IStocks } from "./interfaces";
 import {
   Container,
   ImageAndDescriptionContent,
   Price,
   PriceVariationContainer,
-  StockImage,
   StockTitle,
   StockTitleContent,
   Variation,
   VariationContent,
 } from "./styles";
-import { useTheme } from "styled-components";
-import { IStocks } from "./interfaces";
-import { SvgUri } from "react-native-svg";
 
 export const Stocks = ({
   stock_image,
@@ -28,7 +27,7 @@ export const Stocks = ({
   return (
     <Container>
       <ImageAndDescriptionContent>
-        <SvgUri width={48} height={48} uri={stock_image} scaleX={30} />
+        <SvgUri width={48} height={48} uri={stock_image} />
 
         <StockTitleContent>
           <StockTitle>{stock_name}</StockTitle>
