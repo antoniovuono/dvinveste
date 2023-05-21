@@ -1,7 +1,6 @@
 import { isAxiosError } from "axios";
 
 import { createInstance } from "./api";
-import { IStocksRequest } from "./interface";
 
 export interface HttpResponse<T> {
   data: T[];
@@ -9,7 +8,7 @@ export interface HttpResponse<T> {
 
 const getRequest = (route: string, token?: string) => {
   try {
-    const response = createInstance.get<HttpResponse<IStocksRequest>>(route, {
+    const response = createInstance.get(route, {
       headers: { Authorization: `Bearer ${token}` },
     });
 
