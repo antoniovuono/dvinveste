@@ -12,9 +12,10 @@ import {
   Variation,
   VariationContent,
 } from "./styles";
-import { View } from "react-native";
 import { useTheme } from "styled-components";
 import { IStocks } from "./interfaces";
+import { Circle, Ellipse, SvgUri } from "react-native-svg";
+import { View } from "react-native";
 
 export const Stocks = ({
   stock_image,
@@ -28,11 +29,7 @@ export const Stocks = ({
   return (
     <Container>
       <ImageAndDescriptionContent>
-        <StockImage
-          source={{
-            uri: stock_image,
-          }}
-        />
+        <SvgUri width={48} height={48} uri={stock_image} scaleX={30} />
 
         <StockTitleContent>
           <StockTitle>{stock_name}</StockTitle>

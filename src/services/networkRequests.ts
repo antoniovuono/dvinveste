@@ -1,12 +1,8 @@
 import axios, { isAxiosError } from "axios";
-import { createInstance } from ".";
+import { createInstance } from "./api";
 
-export interface IGetRequest {
-    route: string;
-    token?: string;
-}
 
-const getRequest = ({ route, token}: IGetRequest) => {
+const getRequest = (route: string, token?: string) => {
     try {
         const response = createInstance.get(route, {
             headers: { Authorization: `Bearer ${token}`}
@@ -16,7 +12,7 @@ const getRequest = ({ route, token}: IGetRequest) => {
     } catch (error) {
       if(isAxiosError(error)) {
         console.log(error.status);
-        console.log(error.response);
+        console.log(error.response);{{}}
       } else {
         console.error(error);
       }
@@ -24,4 +20,4 @@ const getRequest = ({ route, token}: IGetRequest) => {
 
 };
 
-export { getRequest};
+export { getRequest };

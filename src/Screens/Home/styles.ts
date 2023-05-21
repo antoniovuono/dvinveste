@@ -1,3 +1,4 @@
+import { ActivityIndicator } from 'react-native';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 import { css } from 'styled-components';
 import styled from 'styled-components/native';
@@ -30,3 +31,15 @@ export const SubTitle = styled.Text`
 
    `};
 `;
+
+export const StockGroupContent = styled.View`
+   flex: 1;
+   width: 100%;
+   justify-content: center;
+
+`;
+
+export const Loader = styled(ActivityIndicator).attrs(({theme}) => ({
+   size: "large",
+   color: theme.colors.PRIMARY_TITLE
+}))``;
