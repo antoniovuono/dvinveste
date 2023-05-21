@@ -57,11 +57,11 @@ export const VariationContent = styled.View`
 
 `;
 
-export const Variation = styled.Text`
+export const Variation = styled.Text<{ variation: number}>`
   font-size: 16px;
   padding-left: 5px;
-    ${({theme}) => css`
-        color: ${theme.colors.SUCCESS};
+    ${({theme, variation}) => css`
+        color: ${variation >= 0 ? theme.colors.SUCCESS : theme.colors.WARNING};
         font-family: ${theme.fonts.PRIMARY_BOLD};
     `}
 `;

@@ -14,8 +14,7 @@ import {
 } from "./styles";
 import { useTheme } from "styled-components";
 import { IStocks } from "./interfaces";
-import { Circle, Ellipse, SvgUri } from "react-native-svg";
-import { View } from "react-native";
+import { SvgUri } from "react-native-svg";
 
 export const Stocks = ({
   stock_image,
@@ -38,10 +37,17 @@ export const Stocks = ({
       </ImageAndDescriptionContent>
 
       <PriceVariationContainer>
-        <Price>R$ {stock_price}</Price>
+        <Price>R$ {stock_price.toFixed(2)}</Price>
         <VariationContent>
-          <AntDesign name="caretup" size={14} color={colors.SUCCESS} />
-          <Variation>{stock_variation}</Variation>
+          {Number(stock_variation) >= 0 ? (
+            <AntDesign name="caretup" size={14} color={colors.SUCCESS} />
+          ) : (
+            <AntDesign name="caretdown" size={14} color={colors.WARNING} />
+          )}
+
+          <Variation variation={Number(stock_variation)}>
+            {stock_variation}%
+          </Variation>
         </VariationContent>
       </PriceVariationContainer>
     </Container>

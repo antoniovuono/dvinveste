@@ -48,8 +48,8 @@ export const Home = () => {
                 stock_image={item.logo}
                 stock_name={item.name}
                 stock_code={item.stock}
-                stock_price={16.14}
-                stock_variation={2.42}
+                stock_price={item.close}
+                stock_variation={item.change.toFixed(2)}
               />
             )}
           />
