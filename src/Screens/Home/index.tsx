@@ -60,7 +60,7 @@ export const Home = () => {
             )}
             ListFooterComponent={
               <BottomRefreshContent>
-                <Refreshing />
+                {!!stocks && <Refreshing />}
               </BottomRefreshContent>
             }
             onEndReachedThreshold={0}

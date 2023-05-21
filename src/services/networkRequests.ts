@@ -11,8 +11,7 @@ const getRequest = (route: string, token?: string) => {
     return response;
   } catch (error) {
     if (isAxiosError(error)) {
-      console.log(error.status);
-      console.log(error.response);
+      console.log(error.toJSON());
     } else {
       console.error(error);
     }
