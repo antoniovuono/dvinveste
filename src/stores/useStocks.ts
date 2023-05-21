@@ -5,7 +5,7 @@ import { getRequest } from "../services/networkRequests";
 
 export interface IState {
   stocks: IStocksRequest[];
-  fetchStocks: () => void;
+  fetchStocks: (items_limit: number) => void;
   isLoading: boolean;
 }
 
@@ -14,8 +14,10 @@ const useStocksStore = create<IState>((set) => ({
 
   isLoading: true,
 
-  fetchStocks: async () => {
-    const stocksResponse = await getRequest("/api/quote/list");
+  fetchStocks: async (items_limit: number) => {
+    const stocksResponse = await getRequest(
+      `/api/quote/list?limit=${items_limit}`
+    );
 
     set({ stocks: await stocksResponse?.data?.stocks });
 

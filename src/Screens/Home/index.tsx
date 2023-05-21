@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { FlatList, RefreshControl } from "react-native";
 
 import {
+  BottomRefreshContent,
   Container,
   ListHeader,
   Loader,
+  Refreshing,
   StockGroupContent,
   SubTitle,
   Title,
@@ -14,20 +16,19 @@ import { Stocks } from "../../components/Stocks";
 import { useStocksStore } from "../../stores/useStocks";
 
 export const Home = () => {
-  const [isRefreshing, setIsRefreshing] = useState(false);
+  const [listLimitItems, setListlimitItems] = useState(7);
 
   const stocks = useStocksStore((state) => state.stocks);
   const fetchStocks = useStocksStore((state) => state.fetchStocks);
   const loading = useStocksStore((state) => state.isLoading);
 
-  const updateStocksGroup = () => {
-    fetchStocks();
-    setIsRefreshing(false);
+  const loadMoreItems = () => {
+    setListlimitItems(listLimitItems + 7);
   };
 
   useEffect(() => {
-    fetchStocks();
-  }, []);
+    fetchStocks(listLimitItems);
+  }, [listLimitItems]);
 
   return (
     <Container>
@@ -57,14 +58,13 @@ export const Home = () => {
                 stock_variation={item.change.toFixed(2)}
               />
             )}
-            refreshControl={
-              <RefreshControl
-                refreshing={isRefreshing}
-                onRefresh={updateStocksGroup}
-                tintColor={"white"}
-                colors={["white"]}
-              />
+            ListFooterComponent={
+              <BottomRefreshContent>
+                <Refreshing />
+              </BottomRefreshContent>
             }
+            onEndReachedThreshold={0}
+            onEndReached={loadMoreItems}
           />
         )}
       </StockGroupContent>
