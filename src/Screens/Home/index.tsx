@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FlatList, RefreshControl } from "react-native";
+import { FlatList } from "react-native";
 
 import {
   BottomRefreshContent,
@@ -13,7 +13,7 @@ import {
 } from "./styles";
 import { Divider } from "../../components/Divider";
 import { Stocks } from "../../components/Stocks";
-import { useStocksStore } from "../../stores/useStocks";
+import { useStocksStore } from "../../stores/useStocksStore";
 
 export const Home = () => {
   const [listLimitItems, setListlimitItems] = useState(7);
