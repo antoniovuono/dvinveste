@@ -13,22 +13,12 @@ import {
 } from "./styles";
 import { Divider } from "../../components/Divider";
 import { Stocks } from "../../components/Stocks";
+import { useStore } from "../../hooks/useStocks";
+import { getRequest } from "../../services/networkRequests";
 import { useStocksStore } from "../../stores/useStocksStore";
 
 export const Home = () => {
-  const [listLimitItems, setListlimitItems] = useState(7);
-
-  const stocks = useStocksStore((state) => state.stocks);
-  const fetchStocks = useStocksStore((state) => state.fetchStocks);
-  const loading = useStocksStore((state) => state.isLoading);
-
-  const loadMoreItems = () => {
-    setListlimitItems(listLimitItems + 7);
-  };
-
-  useEffect(() => {
-    fetchStocks(listLimitItems);
-  }, [listLimitItems]);
+  const { loadMoreItems, stocks, loading } = useStore();
 
   return (
     <Container>
