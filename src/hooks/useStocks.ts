@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { getRequest } from "../services/networkRequests";
 import { useStocksStore } from "../stores/useStocksStore";
