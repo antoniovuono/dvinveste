@@ -14,8 +14,6 @@ import {
 import { Divider } from "../../components/Divider";
 import { Stocks } from "../../components/Stocks";
 import { useStore } from "../../hooks/useStocks";
-import { getRequest } from "../../services/networkRequests";
-import { useStocksStore } from "../../stores/useStocksStore";
 
 export const Home = () => {
   const { loadMoreItems, stocks, loading } = useStore();

@@ -24,7 +24,7 @@ export const useStore = () => {
     };
 
     fetchStocks();
-  }, []);
+  }, [groupItemslimit]);
 
   return { loadMoreItems, stocks, loading };
 };
