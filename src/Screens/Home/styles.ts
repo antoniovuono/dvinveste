@@ -1,5 +1,6 @@
 import { ActivityIndicator } from "react-native";
 import { getBottomSpace } from "react-native-iphone-x-helper";
+import { RFValue } from "react-native-responsive-fontsize";
 import { getStatusBarHeight } from "react-native-status-bar-height";
 import { css } from "styled-components";
 import styled from "styled-components/native";
@@ -16,7 +17,7 @@ export const ListHeader = styled.View`
 `;
 
 export const Title = styled.Text<{ isYellow?: boolean }>`
-  font-size: 18px;
+  font-size: ${RFValue(18)}px;
   ${({ theme, isYellow }) => css`
     color: ${isYellow
       ? theme.colors.SECONDARY_TITLE
@@ -26,7 +27,7 @@ export const Title = styled.Text<{ isYellow?: boolean }>`
 `;
 
 export const SubTitle = styled.Text`
-  font-size: 15px;
+  font-size: ${RFValue(15)}px;
   margin-top: 8px;
   ${({ theme }) => css`
     color: ${theme.colors.PRIMARY_TITLE};

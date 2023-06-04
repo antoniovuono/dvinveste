@@ -1,3 +1,4 @@
+import { RFValue } from "react-native-responsive-fontsize";
 import { css } from "styled-components";
 import styled from "styled-components/native";
 
@@ -29,7 +30,7 @@ export const StockTitleContent = styled.View`
 `;
 
 export const StockTitle = styled.Text<{ isMedium?: boolean }>`
-  font-size: 16px;
+  font-size: ${RFValue(16)}px;
   ${({ theme, isMedium }) => css`
     color: ${theme.colors.PRIMARY_TITLE};
     font-family: ${isMedium
@@ -44,7 +45,7 @@ export const PriceVariationContainer = styled.View`
 `;
 
 export const Price = styled.Text`
-  font-size: 18px;
+  font-size: ${RFValue(18)}px;
   ${({ theme }) => css`
     color: ${theme.colors.PRIMARY_TITLE};
     font-family: ${theme.fonts.PRIMARY_MEDIUM};
@@ -57,7 +58,7 @@ export const VariationContent = styled.View`
 `;
 
 export const Variation = styled.Text<{ variation: number }>`
-  font-size: 16px;
+  font-size: ${RFValue(16)}px;
   padding-left: 5px;
   ${({ theme, variation }) => css`
     color: ${variation >= 0 ? theme.colors.SUCCESS : theme.colors.WARNING};
