@@ -1,28 +1,63 @@
 import React from "react";
+import { FlatList } from "react-native";
 
-import { Container, Header, SearchContent, SubTitle, Title } from "./styles";
+import {
+  Container,
+  Header,
+  SearchContent,
+  StocksGroup,
+  SubTitle,
+  Title,
+} from "./styles";
 import { Divider } from "../../components/Divider";
 import { Input } from "../../components/Input";
 import { SearchButton } from "../../components/SearchButton";
+import { Stocks } from "../../components/Stocks";
+import { useStock } from "../../hooks/useStocks";
+import { useStocksStore } from "../../stores/useStocksStore";
 
 export const SearchStocks = () => {
+  const { sotckId, setStocksId, handleSearchStocks } = useStock();
+
+  const searchedStocks = useStocksStore((state) => state.searchedStocks);
+
   return (
-    <Container>
-      <Header>
-        <Title>Pesquisar</Title>
-        <SubTitle>Entre com o código da ação para pesquisar</SubTitle>
+    <>
+      <Container>
+        <Header>
+          <Title>Pesquisar</Title>
+          <SubTitle>Entre com o código da ação para pesquisar</SubTitle>
 
-        <SearchContent>
-          <Input
-            placeholder="Entre com o código da ação"
-            autoCapitalize="characters"
+          <SearchContent>
+            <Input
+              placeholder="Entre com o código da ação"
+              autoCapitalize="characters"
+              value={sotckId}
+              onChangeText={setStocksId}
+            />
+
+            <SearchButton activeOpacity={0.6} onPress={handleSearchStocks} />
+          </SearchContent>
+
+          <Divider />
+        </Header>
+
+        <StocksGroup>
+          <FlatList
+            data={searchedStocks}
+            keyExtractor={(item) => item.name}
+            renderItem={({ item }) => (
+              <Stocks
+                stock_image={item.logo}
+                stock_name={item.name}
+                stock_code={item.stock}
+                stock_price={item.close}
+                stock_variation={item.change.toFixed(2)}
+              />
+            )}
           />
-
-          <SearchButton activeOpacity={0.6} />
-        </SearchContent>
-
-        <Divider />
-      </Header>
-    </Container>
+        </StocksGroup>
+      </Container>
+    </>
   );
 };

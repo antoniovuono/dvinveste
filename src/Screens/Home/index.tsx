@@ -13,10 +13,10 @@ import {
 } from "./styles";
 import { Divider } from "../../components/Divider";
 import { Stocks } from "../../components/Stocks";
-import { useStore } from "../../hooks/useStocks";
+import { useStock } from "../../hooks/useStocks";
 
 export const Home = () => {
-  const { loadMoreItems, stocks, loading } = useStore();
+  const { loadMoreItems, stocks, loading } = useStock();
 
   return (
     <Container>
