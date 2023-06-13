@@ -1,8 +1,10 @@
 import { BASE_URL } from "@env";
 import axios from "axios";
 
+const url = BASE_URL;
+
 const createInstance = axios.create({
-  baseURL: BASE_URL,
+  baseURL: url,
 });
 
 export { createInstance };

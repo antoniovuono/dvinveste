@@ -11,8 +11,7 @@ import { StatusBar, View } from "react-native";
 import { ThemeProvider } from "styled-components";
 
 import { MainRoutes } from "./src/routes";
-import { Home } from "./src/screens/Home";
-import theme from "./src/screens/theme/theme";
+import theme from "./src/theme/theme";
 
 const App = () => {
   const [isFontsLoaded] = useFonts({

@@ -13,7 +13,7 @@ export const Container = styled.View`
 
 export const ListHeader = styled.View`
   width: 100%;
-  margin-top: ${getStatusBarHeight() + 20}px;
+  margin-top: ${getStatusBarHeight() + 40}px;
 `;
 
 export const Title = styled.Text<{ isYellow?: boolean }>`
