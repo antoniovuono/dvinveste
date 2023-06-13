@@ -8,9 +8,7 @@ export interface HttpResponse<T> {
 
 const getRequest = (route: string, token?: string) => {
   try {
-    const response = createInstance.get(route, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    const response = createInstance.get(route);
 
     return response;
   } catch (error) {

@@ -36,7 +36,10 @@ export const SearchStocks = () => {
               onChangeText={setStocksId}
             />
 
-            <SearchButton activeOpacity={0.6} onPress={handleSearchStocks} />
+            <SearchButton
+              activeOpacity={0.6}
+              onPress={() => handleSearchStocks}
+            />
           </SearchContent>
 
           <Divider />

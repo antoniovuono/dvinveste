@@ -10,7 +10,7 @@ export const Container = styled.View`
 
 export const Header = styled.View`
   width: 100%;
-  padding: 0 21px;
+  padding: 20px;
 `;
 
 export const Title = styled.Text`
@@ -39,5 +39,6 @@ export const SearchContent = styled.View`
 `;
 
 export const StocksGroup = styled.View`
-  padding: 0 20px;
+  padding: 5px 20px;
+  flex: 1;
 `;

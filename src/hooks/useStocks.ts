@@ -9,12 +9,7 @@ export const useStock = () => {
   const loading = useStocksStore((stetae) => stetae.isLoading);
   const setSearchStockes = useStocksStore((state) => state.setSearchStockes);
 
-  const [groupItemslimit, setGroupItemsLimit] = useState(7);
   const [sotckId, setStocksId] = useState("");
-
-  const loadMoreItems = () => {
-    setGroupItemsLimit(groupItemslimit + 7);
-  };
 
   const handleSearchStocks = (stockId: string) => {
     const findStock = stocks.filter((stock) => stock.stock === sotckId);
@@ -24,18 +19,15 @@ export const useStock = () => {
 
   useEffect(() => {
     const fetchStocks = async () => {
-      const response = await getRequest(
-        `/api/quote/list?limit=${groupItemslimit}`
-      );
+      const response = await getRequest(`/api/quote/list`);
 
       storeStocks(response?.data?.stocks);
     };
 
     fetchStocks();
-  }, [groupItemslimit]);
+  }, []);
 
   return {
-    loadMoreItems,
     stocks,
     loading,
     setStocksId,

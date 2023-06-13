@@ -8,7 +8,7 @@ import styled from "styled-components/native";
 export const Container = styled.View`
   flex: 1;
   background-color: ${({ theme }) => theme.colors.PRIMARY_BACKGROUND};
-  padding: 0 20px;
+  padding: 20px;
 `;
 
 export const ListHeader = styled.View`

@@ -2,11 +2,9 @@ import React from "react";
 import { FlatList } from "react-native";
 
 import {
-  BottomRefreshContent,
   Container,
   ListHeader,
   Loader,
-  Refreshing,
   StockGroupContent,
   SubTitle,
   Title,
@@ -16,7 +14,7 @@ import { Stocks } from "../../components/Stocks";
 import { useStock } from "../../hooks/useStocks";
 
 export const Home = () => {
-  const { loadMoreItems, stocks, loading } = useStock();
+  const { stocks, loading } = useStock();
 
   return (
     <Container>
@@ -46,13 +44,6 @@ export const Home = () => {
                 stock_variation={item.change.toFixed(2)}
               />
             )}
-            ListFooterComponent={
-              <BottomRefreshContent>
-                {!!stocks && <Refreshing />}
-              </BottomRefreshContent>
-            }
-            onEndReachedThreshold={0}
-            onEndReached={loadMoreItems}
           />
         )}
       </StockGroupContent>

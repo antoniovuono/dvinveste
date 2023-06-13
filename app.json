@@ -3,6 +3,11 @@
     "name": "dvinveste",
     "slug": "dvinveste",
     "version": "1.0.0",
+    "splash": {
+      "image": "./src/assets/images/coin.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#120423"
+    },
     "assetBundlePatterns": [
       "**/*"
     ]
