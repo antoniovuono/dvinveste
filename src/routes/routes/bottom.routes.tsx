@@ -3,8 +3,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
 import { useTheme } from "styled-components";
 
-import { Home } from "../screens/Home";
-import { SearchStocks } from "../screens/SearchStocks";
+import { Home } from "../../screens/Home";
+import { SearchStocks } from "../../screens/SearchStocks";
 const { Navigator, Screen } = createBottomTabNavigator();
 
 export const BottomNavigation = () => {
