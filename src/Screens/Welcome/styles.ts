@@ -10,8 +10,6 @@ export const Container = styled.View`
   padding: 0 30px;
 `;
 
-export const LogoContent = styled.Text``;
-
 export const Description = styled.Text`
   font-size: ${RFValue(14)}px;
   color: ${({ theme }) => theme.colors.PRIMARY_TITLE};
