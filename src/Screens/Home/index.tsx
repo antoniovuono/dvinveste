@@ -33,6 +33,7 @@ export const Home = () => {
           <Loader />
         ) : (
           <FlatList
+            showsVerticalScrollIndicator={false}
             data={stocks}
             keyExtractor={(item) => item.stock}
             renderItem={({ item }) => (

@@ -23,7 +23,7 @@ const App = () => {
 
   const onLayoutRootView = useCallback(async () => {
     if (isFontsLoaded) {
-      await SplashScreen.hideAsync();
+      SplashScreen.preventAutoHideAsync();
     }
   }, [isFontsLoaded]);
 
