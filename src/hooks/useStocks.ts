@@ -9,10 +9,10 @@ export const useStock = () => {
   const loading = useStocksStore((stetae) => stetae.isLoading);
   const setSearchStockes = useStocksStore((state) => state.setSearchStockes);
 
-  const [sotckId, setStocksId] = useState("");
+  const [stockId, setStocksId] = useState("");
 
   const handleSearchStocks = (stockId: string) => {
-    const findStock = stocks.filter((stock) => stock.stock === sotckId);
+    const findStock = stocks.filter((stock) => stock.stock === stockId);
 
     setSearchStockes(findStock);
   };
@@ -31,7 +31,7 @@ export const useStock = () => {
     stocks,
     loading,
     setStocksId,
-    sotckId,
+    stockId,
     handleSearchStocks,
   };
 };

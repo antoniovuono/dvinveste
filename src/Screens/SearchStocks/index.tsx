@@ -17,7 +17,7 @@ import { useStock } from "../../hooks/useStocks";
 import { useStocksStore } from "../../stores/useStocksStore";
 
 export const SearchStocks = () => {
-  const { sotckId, setStocksId, handleSearchStocks } = useStock();
+  const { stockId, setStocksId, handleSearchStocks } = useStock();
 
   const searchedStocks = useStocksStore((state) => state.searchedStocks);
 
@@ -32,13 +32,13 @@ export const SearchStocks = () => {
             <Input
               placeholder="Entre com o código da ação"
               autoCapitalize="characters"
-              value={sotckId}
+              value={stockId}
               onChangeText={setStocksId}
             />
 
             <SearchButton
               activeOpacity={0.6}
-              onPress={() => handleSearchStocks}
+              onPress={() => handleSearchStocks(stockId)}
             />
           </SearchContent>
 
