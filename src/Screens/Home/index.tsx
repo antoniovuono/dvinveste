@@ -20,7 +20,7 @@ export const Home = () => {
     <Container>
       <ListHeader>
         <Title>
-          Cotações | <Title isYellow>IBOVESPA</Title>
+          Cotações | <Title isGreen>IBOVESPA</Title>
         </Title>
 
         <SubTitle>Cotações do dia na bolsa de valores.</SubTitle>

@@ -16,12 +16,10 @@ export const ListHeader = styled.View`
   margin-top: ${getStatusBarHeight() + 40}px;
 `;
 
-export const Title = styled.Text<{ isYellow?: boolean }>`
+export const Title = styled.Text<{ isGreen?: boolean }>`
   font-size: ${RFValue(18)}px;
-  ${({ theme, isYellow }) => css`
-    color: ${isYellow
-      ? theme.colors.SECONDARY_TITLE
-      : theme.colors.PRIMARY_TITLE};
+  ${({ theme, isGreen }) => css`
+    color: ${isGreen ? theme.colors.SUCCESS : theme.colors.PRIMARY_TITLE};
     font-family: ${theme.fonts.PRIMARY_BOLD};
   `};
 `;
