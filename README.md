@@ -2,7 +2,7 @@
 
 Esse é um aplicativo que consulta as cotações do dia na bolsa de valores. Criei ele com um objetivo de praticar gerenciamento de estado global com Zustend.
 
-# Tecnologias utilizadas:
+## Tecnologias utilizadas:
 
 - Expo.
 - Typescript.
@@ -11,7 +11,7 @@ Esse é um aplicativo que consulta as cotações do dia na bolsa de valores. Cri
 - Axios.
 - react-native-iphone-x-helper
 
-# Instalando o aplicativo:
+## Instalando o aplicativo:
 
 1. Clone o repositório em uma pasta do seu computador.
 
@@ -21,7 +21,7 @@ Esse é um aplicativo que consulta as cotações do dia na bolsa de valores. Cri
 yarn
 ```
 
-# Rodando com Expo Go:
+## Rodando com Expo Go:
 
 Você precisa rodar a aplicação no terminal e depois entrar no aplicativo do expo go e se conectar.
 
@@ -29,7 +29,7 @@ Você precisa rodar a aplicação no terminal e depois entrar no aplicativo do e
 yarn start
 ```
 
-# Rodando o projeto diretamente no emulador:
+## Rodando o projeto diretamente no emulador:
 
 1. IOS:
 
